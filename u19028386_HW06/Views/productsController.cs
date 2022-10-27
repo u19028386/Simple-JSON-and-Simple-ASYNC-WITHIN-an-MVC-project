@@ -14,6 +14,13 @@ namespace u19028386_HW06.Views
     {
         private BikeStoresEntities db = new BikeStoresEntities();
 
+        public ActionResult Search(string searchText)
+        {
+            var sSearch = db.products.Where(zz => zz.product_name == searchText).ToList();
+           
+            return View("Index",sSearch);
+        }
+
         // GET: products
         public ActionResult Index()
         {

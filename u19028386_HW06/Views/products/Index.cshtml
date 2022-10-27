@@ -7,6 +7,13 @@
 <h2>Index</h2>
 
 <p>
+    @using (Html.BeginForm("Search", "products", FormMethod.Post, new { style = "width:40%" }))
+    {
+        <input type="text" style="width:90%;max-width:none; display:inline" name="searchText" class="form-control" placeholder="Enter product name" required />
+
+        <button type="submit" class="btn btn-primary">Search</button>
+
+    }
     @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
