@@ -1,0 +1,55 @@
+﻿@model IEnumerable<u19028386_HW06.Models.order_items>
+
+@{
+    ViewBag.Title = "View1";
+}
+
+<h2>View1</h2>
+
+<p>
+    @using (Html.BeginForm("SearchD", "Home", FormMethod.Post, new { style = "width:40%" }))
+    {
+        <input type="date" style="width:90%;max-width:none; display:inline" name="searchDate" class="form-control"  required />
+
+        <button type="submit" class="btn btn-primary">Search</button>
+
+    }
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.product.product_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.list_price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.quantity)
+        </th>
+
+        <th>
+            Total
+        </th>
+
+
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.product.product_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.quantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.list_price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.list_price) * @Html.DisplayFor(modelItem => item.list_price)
+        </td>
+    
+    </tr>
+}
+
+</table>
