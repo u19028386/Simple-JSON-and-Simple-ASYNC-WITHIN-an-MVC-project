@@ -7,7 +7,6 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using u19028386_HW06.Models;
-
 using PagedList.Mvc;
 using PagedList;
 
